@@ -28,5 +28,10 @@ describe("SimiosOrHuman", function () {
       const dnaResult = dnaChecker.isSimian(dna)
       assert.strictEqual(dnaResult, false)
     })
+    it("should return false given a dna sequence with four different chemical bases", function () {
+      const dna = ["TCAG"]
+      const dnaResult = dnaChecker.isSimian(dna)
+      assert.strictEqual(dnaResult, false)
+    })
   })
 })
