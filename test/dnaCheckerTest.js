@@ -29,7 +29,7 @@ describe("SimiosOrHuman", function () {
       assert.strictEqual(dnaChecker.isSimian(dna), false)
     })
 
-    it("should return false given a dna sequence with four different nitrogen bases", function () {
+    it.only("should return false given a dna sequence with four different nitrogen bases", function () {
       const dna = ["TCAG"]
       assert.strictEqual(dnaChecker.isSimian(dna), false)
     })
@@ -38,6 +38,10 @@ describe("SimiosOrHuman", function () {
       const dna = ["CCTM"]
       assert.strictEqual(dnaChecker.isSimian(dna), false)
     })
-    
+
+    it("should return true given a dna sequence with four equals nitrogen bases", function () {
+      const dna = ["AAAA"]
+      assert.strictEqual(dnaChecker.isSimian(dna), true)
+    })
   })
 })
