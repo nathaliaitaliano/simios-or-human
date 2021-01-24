@@ -1,5 +1,5 @@
 const isSimian = dna => {
-  return false
+  return dna[0].split().length >= 4
 }
 
 module.exports = { isSimian }
