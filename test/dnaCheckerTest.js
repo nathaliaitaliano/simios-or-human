@@ -8,5 +8,10 @@ describe("SimiosOrHuman", function () {
       const dnaResult = dnaChecker.isSimian(dna)
       assert.strictEqual(dnaResult, false)
     })
+    it("should return false given a empty dna sequence", function () {
+      const dna = [""]
+      const dnaResult = dnaChecker.isSimian(dna)
+      assert.strictEqual(dnaResult, false)
+    })
   })
 })
