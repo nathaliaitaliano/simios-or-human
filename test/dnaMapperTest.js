@@ -5,21 +5,21 @@ describe("SimiosOrHuman", function () {
   describe("mapSequences", function () {
     it("should return the horizontals dna sequences given a dna", function () {
       const dna = ["CT", "GC"]
-      const dnaSequencesExpected = ["CT", "GC", "CG", "TC"]
+      const dnaSequencesExpected = ["CT", "GC", "CG", "TC", "CC", "T"]
       const dnaSequences = dnaMapper.mapSequences(dna)
       assert.deepStrictEqual(dnaSequencesExpected, dnaSequences)
     })
 
     it("should retturn the vertical dna sequences given a dna", function () {
       const dna = ["CT", "GC"]
-      const dnaSequencesExpected = [ "CT", "GC", "CG", "TC"]
+      const dnaSequencesExpected = [ "CT", "GC", "CG", "TC", "CC", "T"]
       const dnaSequences = dnaMapper.mapSequences(dna)
       assert.deepStrictEqual(dnaSequencesExpected, dnaSequences)
     })
 
     it("should retturn the left diagonal dna sequences given a dna", function () {
       const dna = ["CT", "GC"]
-      const dnaSequencesExpected = [ "CT", "GC", "CG", "TC", "CC"]
+      const dnaSequencesExpected = [ "CT", "GC", "CG", "TC", "CC", "T"]
       const dnaSequences = dnaMapper.mapSequences(dna)
       assert.deepStrictEqual(dnaSequencesExpected, dnaSequences)
     })
