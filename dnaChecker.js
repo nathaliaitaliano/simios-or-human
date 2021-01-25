@@ -16,14 +16,14 @@ const dnaValidator = dna => {
 
 const checkNitrogenBasesSequence = dna => {
   const sequencesToBeSimian = ["AAAA", "TTTT", "CCCC", "GGGG"]
-  let nitrogenBasesSimianSequence = false
+  let simianDna = false
 
   dna.forEach(nitrogenBasesSequence => {
     sequencesToBeSimian.forEach(simianSequence => {
-      if (nitrogenBasesSequence.indexOf(simianSequence) !== -1) return nitrogenBasesSimianSequence = true
+      if (nitrogenBasesSequence.indexOf(simianSequence) !== -1) return simianDna = true
     })
   })
-  return nitrogenBasesSimianSequence
+  return simianDna
 }
 
 module.exports = { isSimian }
