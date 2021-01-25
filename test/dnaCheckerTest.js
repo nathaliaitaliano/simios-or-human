@@ -43,5 +43,10 @@ describe("SimiosOrHuman", function () {
       const dna = ["AAAA"]
       assert.strictEqual(dnaChecker.isSimian(dna), true)
     })
+
+    it("should return false given a dna that not contains a nitrogen sequence with four equals nitrogen bases", function () {
+      const dna = ["TCGT", "AAAT", "CCTT", "GGTA"]
+      assert.strictEqual(dnaChecker.isSimian(dna), false)
+    })
   })
 })
