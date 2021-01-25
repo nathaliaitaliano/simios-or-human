@@ -2,14 +2,24 @@ const mapSequences = dna => {
   const dnaSequences = []
 
   for (let i = 0; i < dna.length; i++) {
-    let verticalBase = ""
+    let verticalSequence = ""
     dna.forEach(sequence => {
-      const nitrogenBases = sequence.split("")
-      verticalBase = verticalBase.concat(nitrogenBases[i])
+      verticalSequence = verticalSequence.concat(sequence.charAt(i))
     })
-    dnaSequences.push(verticalBase)
+    dnaSequences.push(verticalSequence)
   }
-  
+
+  const firstSequence = dna[0].split("")
+  for (let i = 0; i < firstSequence.length; i++) {
+    let leftDiagonalSequence = dna[0].charAt(i)
+    let nextPosition = i+1
+    while (nextPosition < dna.length) {
+      leftDiagonalSequence = leftDiagonalSequence.concat(dna[nextPosition].charAt(nextPosition))
+      nextPosition++
+    }
+    dnaSequences.push(leftDiagonalSequence)
+  }
+
   return dna.concat(dnaSequences)
 }
 
