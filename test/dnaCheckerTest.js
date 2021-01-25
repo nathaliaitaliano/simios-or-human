@@ -39,14 +39,19 @@ describe("SimiosOrHuman", function () {
       assert.strictEqual(dnaChecker.isSimian(dna), false)
     })
 
-    it("should return true given a dna sequence with four equals nitrogen bases", function () {
+    it("should return true given a dna sequence with four followed equals nitrogen bases", function () {
       const dna = ["AAAA"]
       assert.strictEqual(dnaChecker.isSimian(dna), true)
     })
 
-    it("should return false given a dna that not contains a sequence with four equals nitrogen bases", function () {
+    it("should return false given a dna that not contains, at least, one sequence with four followedequals nitrogen bases", function () {
       const dna = ["TCGT", "AAAT", "CCTT", "GGTA"]
       assert.strictEqual(dnaChecker.isSimian(dna), false)
+    })
+
+    it("should return true given a dna that contains, at least, one nitrogen sequence with four followed equals nitrogen bases", function () {
+      const dna = ["TCGT", "AAAT", "CCCC", "TCGT"]
+      assert.strictEqual(dnaChecker.isSimian(dna), true)
     })
   })
 })
