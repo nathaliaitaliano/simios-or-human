@@ -9,10 +9,9 @@ const mapSequences = dna => {
     dnaSequences.push(verticalSequence)
   }
 
-  const firstSequence = dna[0].split("")
-  for (let i = 0; i < firstSequence.length; i++) {
+  for (let i = 0; i < dna.length; i++) {
     let leftDiagonalSequence = dna[0].charAt(i)
-    let nextPosition = i+1
+    let nextPosition = i + 1
     while (nextPosition < dna.length) {
       leftDiagonalSequence = leftDiagonalSequence.concat(dna[nextPosition].charAt(nextPosition))
       nextPosition++
