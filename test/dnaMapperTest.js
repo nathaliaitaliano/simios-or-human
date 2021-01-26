@@ -14,14 +14,21 @@ describe("SimiosOrHuman", function () {
 
     it("should retturn the vertical dna sequences given a dna", function () {
       const dna = ["CT", "GC"]
-      const dnaSequencesExpected = ["CT", "GC", "CG", "TC", "CC", "T"]
+      const dnaSequencesExpected = ["CC", "T"]
       const dnaSequences = dnaMapper.mapSequences(dna)
       assert.ok(contains(dnaSequences, dnaSequencesExpected))
     })
 
-    it("should retturn the left diagonal dna sequences given a dna", function () {
+    it("should retturn the left diagonals dna sequences given a dna", function () {
       const dna = ["CT", "GC"]
-      const dnaSequencesExpected = ["CT", "GC", "CG", "TC", "G", "CC", "T"]
+      const dnaSequencesExpected = ["G", "CC", "T"]
+      const dnaSequences = dnaMapper.mapSequences(dna)
+      assert.ok(contains(dnaSequences, dnaSequencesExpected))
+    })
+
+    it("should retturn the right diagonals dna sequences given a dna", function () {
+      const dna = ["CT", "GC"]
+      const dnaSequencesExpected = ["C", "TG", "C" ]
       const dnaSequences = dnaMapper.mapSequences(dna)
       assert.ok(contains(dnaSequences, dnaSequencesExpected))
     })
