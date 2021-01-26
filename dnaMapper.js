@@ -34,7 +34,7 @@ const mapLeftDiagonalSequences = dna => {
     let leftDiagonalSequenceVertical = dna[1].charAt(i - 1)
     let nextPosition = i + 1
     while (nextPosition < dna.length) {
-      leftDiagonalSequenceVertical = leftDiagonalSequenceVertical.concat(dna[nextPosition].charAt(nextPosition))
+      leftDiagonalSequenceVertical = leftDiagonalSequenceVertical.concat(dna[nextPosition].charAt(nextPosition - 1))
       nextPosition++
     }
     leftDiagonalSequences.push(leftDiagonalSequenceVertical)
