@@ -4,12 +4,15 @@ const isSimian = dna => {
 
 const dnaValidator = dna => {
   const posiblesNitrogenBases = ["A", "T", "C", "G"]
-  let dnaValidation = false
+  let dnaValidation = true
 
   dna.forEach(nitrogenBasesSequence => {
     const nitrogenBases = nitrogenBasesSequence.split("")
-    nitrogenBases.forEach(base =>
-      dnaValidation = posiblesNitrogenBases.includes(base))
+    nitrogenBases.forEach(base => {
+      if (posiblesNitrogenBases.includes(base) === false) {
+        return dnaValidation = false
+      }
+    })
   })
   return dnaValidation
 }
