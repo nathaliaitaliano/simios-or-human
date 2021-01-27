@@ -45,31 +45,31 @@ const mapLeftDiagonalSequences = dna => {
 const mapRightDiagonalSequences = dna => {
   const rightDiagonalSequences = []
 
-  for (let i = 0; i < dna.length; i++) {
-    let rightDiagonalSequenceHorizontal = dna[0].charAt(dna.length - 1)
-    let nextPosition = i + 1
-    let nextPositionCharAt = dna.length - 2
-
-    while (nextPosition < dna.length && nextPositionCharAt >= 0) {
-      rightDiagonalSequenceHorizontal = rightDiagonalSequenceHorizontal.concat(dna[nextPosition].charAt(nextPositionCharAt))
-      nextPosition++
-      nextPositionCharAt--
+  for (let k = dna.length - 1; k >= 0; k--) {
+    let rightDiagonalSequenceHorizontal = dna[0].charAt(k)
+    let nextDnaSequencePosition = 1
+    let nextNitrogenBasePosition = k - 1
+    while (nextDnaSequencePosition < dna.length && nextNitrogenBasePosition >= 0) {
+      rightDiagonalSequenceHorizontal = rightDiagonalSequenceHorizontal.concat(dna[nextDnaSequencePosition].charAt(nextNitrogenBasePosition))
+      nextDnaSequencePosition++
+      nextNitrogenBasePosition--
     }
     rightDiagonalSequences.push(rightDiagonalSequenceHorizontal)
   }
 
-  for (let i = 1; i < dna.length; i++) {
-    let rightDiagonalSequenceVertical = dna[1].charAt(dna.length - 1)
-    let nextPosition = i + 1
-    let nextPositionCharAt = dna.length - 2
 
-    while (nextPosition < dna.length && nextPositionCharAt >= 0) {
-      rightDiagonalSequenceVertical = rightDiagonalSequenceVertical.concat(dna[nextPosition].charAt(nextPositionCharAt))
-      nextPosition++
-      nextPositionCharAt--
+  for (let i = 1; i < dna.length; i++) {
+    let rightDiagonalSequenceVertical = dna[i].charAt(dna.length - 1)
+    let nextDnaSequencePosition = i + 1
+    let nextNitrogenBasePosition = dna.length - 2
+    while (nextDnaSequencePosition < dna.length && nextNitrogenBasePosition >= 0) {
+      rightDiagonalSequenceVertical = rightDiagonalSequenceVertical.concat(dna[nextDnaSequencePosition].charAt(nextNitrogenBasePosition))
+      nextDnaSequencePosition++
+      nextNitrogenBasePosition--
     }
     rightDiagonalSequences.push(rightDiagonalSequenceVertical)
   }
+
   return rightDiagonalSequences
 }
 
